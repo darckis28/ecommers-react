@@ -12,7 +12,7 @@ const Header = () => {
           <HamburgerIcon />
         </span>
         <h1 className="text-[25.2px] font-integralCF font-extrabold tracking-[-0.07em]">
-          SHOP.CO
+          SHOP.PE
         </h1>
       </div>
       {/* <nav>
