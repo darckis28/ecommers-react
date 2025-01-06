@@ -2,7 +2,7 @@ import Email from "../icons/Email";
 
 const Contact = () => {
   return (
-    <section className="bg-black px-4 pt-8 pb-6 rounded-xl flex flex-col md:flex-row md:items-center md:justify-between ">
+    <section className="bg-black px-4 pt-8 pb-6 rounded-xl flex flex-col md:flex-row md:items-center md:justify-between mt-5 ">
       <h2 className="text-[32px] leading-8 text-white  font-extrabold font-integralCF mb-6 flex-1">
         STAY UPTO DATE ABOUT OUR LATEST OFFERS
       </h2>

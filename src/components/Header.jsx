@@ -3,6 +3,7 @@ import Down from "../icons/Down";
 import HamburgerIcon from "../icons/Hamburger";
 import Search from "../icons/Search";
 import User from "../icons/User";
+import Name from "./Name";
 
 const Header = () => {
   return (
@@ -11,9 +12,7 @@ const Header = () => {
         <span>
           <HamburgerIcon />
         </span>
-        <h1 className="text-[25.2px] font-integralCF font-extrabold tracking-[-0.07em]">
-          SHOP.PE
-        </h1>
+        <Name />
       </div>
       {/* <nav>
         <ul className="flex gap-4">
