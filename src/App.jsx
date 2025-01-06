@@ -1,6 +1,7 @@
 import Brands from "./components/Brands";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import ModelsCategory from "./components/ModelsCategory";
 import SingUpMessage from "./components/SingUpMessage";
 
 const App = () => {
@@ -10,6 +11,9 @@ const App = () => {
       <Header />
       <Hero />
       <Brands />
+      <div className="p-8">
+        <ModelsCategory />
+      </div>
     </>
   );
 };

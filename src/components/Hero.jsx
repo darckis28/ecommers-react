@@ -5,7 +5,7 @@ import ButtonBlack from "./ButtonBlack";
 import Quanty from "./Quanty";
 const Hero = () => {
   return (
-    <section className="bg-[#F2F0F1] flex flex-col gap-1 lg:h-[663px] lg:flex-row">
+    <section className="bg-[#F2F0F1] flex flex-col gap-1 md:h-[663px] md:flex-row">
       <div className="flex-1 p-3 lg:p-10 flex flex-col gap-4 justify-center">
         <h2 className="font-integralCF font-extrabold text-4xl leading-8 sm:text-4xl lg:text-[64px] lg:leading-none lg:font-normal tracking-tighter pt-10">
           FIND CLOTHES THAT MATCHES YOUR STYLE
