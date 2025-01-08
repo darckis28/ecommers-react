@@ -1,34 +1,28 @@
-import Brands from "./components/Brands";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import ModelsCategory from "./components/ModelsCategory";
-import SectionProducts from "./components/SectionProducts";
 import SingUpMessage from "./components/SingUpMessage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Details from "./pages/Details";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <SingUpMessage />
       <Header />
-      <Hero />
-      <Brands />
-      <div className="p-3 md:p-8">
-        <ModelsCategory />
-        <SectionProducts
-          category={2}
-          title={"Clothes for Her"}
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
         />
+        <Route
+          path="/details/:id"
+          element={<Details />}
+        />
+      </Routes>
 
-        <SectionProducts
-          category={3}
-          title={"Clothes for His"}
-        />
-        <Contact />
-      </div>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 export default App;
