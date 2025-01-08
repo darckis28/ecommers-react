@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import Cart from "../icons/Cart";
-import Down from "../icons/Down";
 import HamburgerIcon from "../icons/Hamburger";
 import Search from "../icons/Search";
 import User from "../icons/User";
@@ -42,9 +42,9 @@ const Header = () => {
         <span>
           <User />
         </span>
-        <span>
+        <Link to={"/cart"}>
           <Cart />
-        </span>
+        </Link>
       </div>
     </header>
   );
