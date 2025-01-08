@@ -10,7 +10,6 @@ const Home = () => {
       <Hero />
       <Brands />
       <div className="p-3 md:p-8">
-        <ModelsCategory />
         <SectionProducts
           category={2}
           title={"Clothes for Her"}
@@ -20,6 +19,7 @@ const Home = () => {
           category={3}
           title={"Clothes for His"}
         />
+        <ModelsCategory />
         <Contact />
       </div>
     </>
