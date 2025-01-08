@@ -1,16 +1,13 @@
+import { Link } from "react-router-dom";
 import Starts from "../icons/Starts";
-
+import { startDimension } from "../utils/startDimension";
 const CardProduct = ({ info }) => {
-  const { title, price, image, rating } = info;
-
-  const calculateRate = () => {
-    const porcent = (rating?.rate * 96) / 5;
-    return `${porcent}px`;
-  };
-  // calculateRate();
-
+  const { title, price, image, rating, id } = info;
   return (
-    <div className="grid grid-cols-1 gap-4 p-4  rounded-lg shadow-lg">
+    <Link
+      to={`/details/${id}`}
+      className="grid grid-cols-1 gap-4 p-4  rounded-lg shadow-lg"
+    >
       <img
         className="h-60 object-contain w-full object-center"
         src={image}
@@ -20,7 +17,7 @@ const CardProduct = ({ info }) => {
       <div className="flex items-center gap-2">
         <span
           className="w-24 overflow-x-hidden"
-          style={{ width: calculateRate() }}
+          style={{ width: startDimension(rating.rate) }}
         >
           <Starts />
         </span>
@@ -29,7 +26,7 @@ const CardProduct = ({ info }) => {
         </p>
       </div>
       <p className="font-bold text-2xl">${price}</p>
-    </div>
+    </Link>
   );
 };
 export default CardProduct;
