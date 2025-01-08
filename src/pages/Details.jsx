@@ -22,7 +22,7 @@ const Details = () => {
     getProduct();
   }, [id]);
   return (
-    <section className="flex gap-2 mb-5">
+    <section className="flex gap-2 mb-5 flex-col md:flex-row">
       <div className="flex-1 flex">
         <img
           className="max-h-[450px] aspect-square object-contain mx-auto rounded-xl"
