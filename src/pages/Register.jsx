@@ -7,11 +7,8 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
-    <form
-      action="#"
-      className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
-    >
-      <p className="text-center text-lg font-medium font-integralCF">
+    <form className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 mx-auto   max-w-lg">
+      <p className="text-center text-2xl font-bold text-black sm:text-3xl">
         register new account
       </p>
       <InputForm
