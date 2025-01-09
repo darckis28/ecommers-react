@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import ButonBlack from "../components/ButtonBlack";
 import ListProduct from "../components/ListProduct";
 import Right from "../icons/Right";
 
 const CartPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="p-4">
       <h2 className="text-3xl font-extrabold font-integralCF mb-8 uppercase	">

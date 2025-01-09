@@ -11,6 +11,9 @@ const Details = () => {
   const [product, setProduct] = useState(null);
   const [count, setCount] = useState(1);
   const { id } = useParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     async function getProduct() {

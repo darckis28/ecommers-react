@@ -4,8 +4,12 @@ import InputForm from "../components/InputForm";
 import Userinput from "../icons/Userinput";
 import Phone from "../icons/Phone";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Register = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <form className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 mx-auto   max-w-lg">
       <p className="text-center text-2xl font-bold text-black sm:text-3xl">

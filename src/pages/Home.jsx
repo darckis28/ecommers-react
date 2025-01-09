@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import Brands from "../components/Brands";
 import Contact from "../components/Contact";
 import Hero from "../components/Hero";
 import ModelsCategory from "../components/ModelsCategory";
 import SectionProducts from "../components/SectionProducts";
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {" "}
