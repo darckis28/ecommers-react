@@ -4,14 +4,15 @@ const InputForm = ({
   type,
   clasname,
   register,
-  errors,
-  name,
+  error,
+  defaul,
 }) => {
   return (
     <>
       <div className={clasname}>
         <div className="relative">
           <input
+            defaultValue={defaul}
             type={type}
             className="w-full rounded-lg bg-[#f0f0f0] border-gray-200 p-4 pe-12 text-sm shadow-sm"
             placeholder={placeholder}
@@ -22,9 +23,7 @@ const InputForm = ({
             {icon}
           </span>
         </div>
-        {errors?.[name] && (
-          <p className="text-red-500 mt-1 text-sm">{errors[name].message}</p>
-        )}
+        {error && <p className="text-red-500 mt-1 text-sm">{error.message}</p>}
       </div>
     </>
   );

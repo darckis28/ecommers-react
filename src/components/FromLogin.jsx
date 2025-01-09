@@ -50,6 +50,7 @@ const FromLogin = () => {
         placeholder={"Enter username"}
         icon={<Userinput />}
         type={"text"}
+        defaul={"kevinryan"}
         register={{
           ...register("username", {
             required: {
@@ -58,12 +59,13 @@ const FromLogin = () => {
             },
           }),
         }}
-        errors={errors}
+        error={errors.username}
       />
       <InputForm
         name={"password"}
         placeholder={"Enter password"}
         icon={<Eye />}
+        defaul={"kev02937@"}
         type={"password"}
         register={{
           ...register("password", {
@@ -73,7 +75,7 @@ const FromLogin = () => {
             },
           }),
         }}
-        errors={errors}
+        error={errors.password}
       />
       {error && <p className="text-red-500 text-sm">{error}</p>}
       <button
