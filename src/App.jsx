@@ -7,37 +7,42 @@ import Details from "./pages/Details";
 import CartPage from "./pages/CartPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import GlobalContext from "./context/GlobalContext";
 
 const App = () => {
+  // const { token } = useContextCommers();
   return (
-    <BrowserRouter>
-      <SingUpMessage />
-      <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route
-          path="/details/:id"
-          element={<Details />}
-        />
-        <Route
-          path="/cart"
-          element={<CartPage />}
-        />
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-        <Route
-          path="/register"
-          element={<Register />}
-        />
-      </Routes>
+    <GlobalContext>
+      <BrowserRouter>
+        <SingUpMessage />
 
-      <Footer />
-    </BrowserRouter>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/details/:id"
+            element={<Details />}
+          />
+          <Route
+            path="/cart"
+            element={<CartPage />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          <Route
+            path="/register"
+            element={<Register />}
+          />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+    </GlobalContext>
   );
 };
 export default App;
