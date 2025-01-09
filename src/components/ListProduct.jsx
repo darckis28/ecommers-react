@@ -1,14 +1,25 @@
-const ListProduct = () => {
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const ListProduct = ({ id, qty }) => {
+  const [product, setProduct] = useState();
+  useEffect(() => {
+    async function getProduct() {
+      const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
+      setProduct(res.data);
+    }
+    getProduct();
+  }, [id]);
   return (
     <li className="flex items-center gap-4">
       <img
-        src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
-        alt=""
+        src={product?.image}
+        alt={product?.title}
         className="size-16 rounded object-cover"
       />
 
       <div>
-        <h3 className="text-sm text-gray-900">Basic Tee 6-Pack</h3>
+        <h3 className="text-sm text-gray-900">{product?.title}</h3>
 
         <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
           <div>
@@ -36,7 +47,7 @@ const ListProduct = () => {
           <input
             type="number"
             min="1"
-            value="1"
+            defaultValue={qty}
             id="Line1Qty"
             className="h-8 w-12 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
           />

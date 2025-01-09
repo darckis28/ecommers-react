@@ -1,11 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ButonBlack from "../components/ButtonBlack";
 import ListProduct from "../components/ListProduct";
 import Right from "../icons/Right";
+import axios from "axios";
 
 const CartPage = () => {
+  const [products, setProducts] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+  useEffect(() => {
+    async function getProduct() {
+      const res = await axios.get("https://fakestoreapi.com/carts/2");
+      setProducts(res.data.products);
+    }
+    getProduct();
   }, []);
   return (
     <section className="p-4">
@@ -14,10 +24,14 @@ const CartPage = () => {
       </h2>
       <div className="flex flex-col md:flex-row  gap-10">
         <ul className="flex-1">
-          <ListProduct />
-          <ListProduct />
-
-          <ListProduct />
+          {products &&
+            products.map((product) => (
+              <ListProduct
+                key={product.productId}
+                id={product.productId}
+                qty={product.quantity}
+              />
+            ))}
         </ul>
         <div className="flex-1 flex justify-between flex-col p-4">
           <div className="mb-4">
